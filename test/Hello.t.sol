@@ -1,18 +1,19 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
 
+pragma solidity ^0.8.17;
 import "forge-std/Test.sol";
 import "../src/HelloWorld.sol";
 
 contract HelloTest is Test {
-    HelloWorld helloWorld;
+    HelloWorld hello;
 
     function setUp() public {
-        helloWorld = new HelloWorld();
+        //create a new instance of the hello contract
+        //first anytime a test is called
+        hello = new HelloWorld();
     }
 
-    function testStringStoredInGreet() public {
-        // vm.expectRevert();
-        assertEq(helloWorld.greet(), "Hello World!");
+    function testThatStringValueIsTheSame() public {
+        assertEq(hello.greet(), "Hello World!");
     }
 }

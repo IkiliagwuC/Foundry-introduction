@@ -17,8 +17,9 @@ contract CounterTest is Test {
     }
 
     function testFailDec() public {
-        counter.dec(); //will fail
-        // counter.inc();
+        //will fail
+        //only returns passed if test fails
+        counter.dec();
     }
 
     function testDecUnderflow() public {
@@ -30,6 +31,6 @@ contract CounterTest is Test {
         counter.inc();
         counter.inc();
         counter.dec();
-        assertEq(counter.count(), 2);
+        assertEq(counter.count(), 1);
     }
 }

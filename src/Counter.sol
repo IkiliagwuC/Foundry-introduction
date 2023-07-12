@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
+import {console} from "forge-std/console.sol";
 
 contract Counter {
     uint public count;
@@ -11,6 +12,7 @@ contract Counter {
 
     // Function to increment count by 1
     function inc() public {
+        console.log("HERE", count);
         count += 1;
     }
 
